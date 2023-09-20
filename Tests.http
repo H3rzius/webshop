@@ -1,0 +1,10 @@
+POST localhost:8080/supplier
+Content-Type: application/json
+
+{
+  "name": "Supplier 1",
+  "street": "Street 1",
+  "postcode": "12345",
+  "city": "City 1",
+  "phone": "123456789"
+}
