@@ -1,5 +1,6 @@
 package de.szut.store.supplier;
 
+import de.szut.store.exceptionhandling.RessourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -12,7 +13,7 @@ public class SupplierService {
     }
 
     public SupplierEntity getSupplier(Long id) {
-        return supplierRepository.findById(id).orElseThrow();
+        return supplierRepository.findById(id).orElseThrow(() -> new RessourceNotFoundException("Supplier with id " + id + " not found"));
     }
 
     public SupplierEntity createSupplier(SupplierEntity supplierEntity) {

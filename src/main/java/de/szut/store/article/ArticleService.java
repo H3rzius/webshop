@@ -18,4 +18,17 @@ public class ArticleService {
         // enterne aus dem Ergeniss die Artikel die nicht mehr lieferbar sind
         return articleRepository.findAll();
     }
+
+    public ArticleEntity get(Long id) {
+        return articleRepository.findById(id).orElseThrow();
+    }
+
+    public Collection<ArticleEntity>  getArticleByDesignation(String designation) {
+        return articleRepository.findByDesignation(designation);
+
+    }
+
+    public ArticleEntity createArticle(ArticleEntity articleEntity) {
+        return articleRepository.save(articleEntity);
+    }
 }

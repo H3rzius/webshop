@@ -23,6 +23,9 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     implementation("org.springframework.boot:spring-boot-starter-validation:3.1.3")
     runtimeOnly("org.postgresql:postgresql")
+    testImplementation("org.testcontainers:testcontainers:1.19.0")
+    testImplementation("org.testcontainers:postgresql:1.19.0")
+
 }
 
 tasks.withType<Test> {

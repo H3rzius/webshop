@@ -1,4 +1,4 @@
-POST localhost:8080/supplier
+POST localhost:8080/store/supplier
 Content-Type: application/json
 
 {
@@ -8,3 +8,39 @@ Content-Type: application/json
   "city": "City 1",
   "phone": "123456789"
 }
+
+###
+
+GET localhost:8080/store/supplier
+
+###
+
+GET localhost:8080/store/supplier/123
+
+
+### Articles
+
+POST localhost:8081/store/article
+Content-Type: application/json
+
+{
+  "designation": "Article1",
+  "price": "1.23"
+}
+
+###
+
+GET localhost:8081/store/article
+
+###
+
+GET localhost:8081/store/article/1
+
+###
+
+GET localhost:8081/store/article?designation=Article1
+
+
+###
+
+GET localhost:8081/store/supplier/1/articles
