@@ -31,7 +31,7 @@ public class ContactEntity {
 
     private String phone;
 
-    @OneToOne(mappedBy = "contact", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "contact", cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
     private SupplierEntity supplier;
 
 }

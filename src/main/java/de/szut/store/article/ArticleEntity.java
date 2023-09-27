@@ -31,6 +31,6 @@ public class ArticleEntity {
     @Column(name="update_date", nullable = false)
     private LocalDateTime updateDate = LocalDateTime.now();
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     private SupplierEntity supplier;
 }

@@ -23,9 +23,9 @@ public class SupplierEntity {
     @Size(max = 50, message = "Name must be less than 50 characters")
     private String name;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
     private ContactEntity contact;
 
-    @OneToMany(mappedBy = "supplier", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "supplier", cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
     private Set<ArticleEntity> articles;
 }

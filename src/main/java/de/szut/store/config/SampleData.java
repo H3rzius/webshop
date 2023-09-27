@@ -4,6 +4,7 @@ package de.szut.store.config;
 import de.szut.store.article.ArticleEntity;
 import de.szut.store.article.ArticleRepository;
 import de.szut.store.contact.ContactEntity;
+import de.szut.store.contact.ContactRepository;
 import de.szut.store.supplier.SupplierEntity;
 import de.szut.store.supplier.SupplierRepository;
 import jakarta.transaction.Transactional;
@@ -17,12 +18,15 @@ public class SampleData {
     private final ArticleRepository articleRepository;
     private final SupplierRepository supplierRepository;
 
+    private final ContactRepository contactRepository;
 
-    public SampleData(ArticleRepository articleRepository, SupplierRepository supplierRepository) {
+
+    public SampleData(ArticleRepository articleRepository, SupplierRepository supplierRepository, ContactRepository contactRepository) {
         this.articleRepository = articleRepository;
         this.supplierRepository = supplierRepository;
+        this.contactRepository = contactRepository;
 
-      //   createData();
+      createData();
     }
 
 
@@ -37,6 +41,7 @@ public class SampleData {
         contact.setStreet("Musterstraße 1");
         contact.setPostcode("12345");
         contact.setPhone("030123456");
+        contact=this.contactRepository.save(contact);
         supplierEntity.setContact(contact);
         supplierEntity=this.supplierRepository.save(supplierEntity);
         var articleEntity = new ArticleEntity();
